@@ -23,10 +23,5 @@
     //Gateway URL
     "BaseUrl": "https://localhost:5001"
   }
-  //"HttpHandlerOptions": {
-  //  "AllowAutoRedirect": true,
-  //  "UseCookieContainer": true,
-  //  "UseTracing": true,
-  //  "MaxConnectionsPerServer": 100
-  //}
+
 }

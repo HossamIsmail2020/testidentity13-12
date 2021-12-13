@@ -10,8 +10,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection;
-using Microsoft.Extensions.DependencyInjection;
 using IdentityServer4.EntityFramework.Mappers;
 using IdentityServer4.EntityFramework.DbContexts;
 using Microsoft.Extensions.Configuration;
@@ -109,15 +107,6 @@ namespace ProCodeGuide.Samples.IdentityServer4
                 serviceScope.ServiceProvider.GetRequiredService<PersistedGrantDbContext>().Database.Migrate();
 
                 var context = serviceScope.ServiceProvider.GetRequiredService<ConfigurationDbContext>();
-
-                //check if Database created not process code
-
-                //if(!context.Database.EnsureCreated())
-                //{
-                //    return;
-                //}
-
-                
 
                 context.Database.Migrate();
                 
