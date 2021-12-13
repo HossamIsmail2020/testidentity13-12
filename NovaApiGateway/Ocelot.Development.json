@@ -1,0 +1,32 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/WeatherForecast",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5004
+        }
+      ],
+      "UpstreamPathTemplate": "/hossam",
+      "UpstreamHttpMethod": [ "Get" ],
+
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "IdentityApiKey",
+        "AllowedScopes": [ "weatherApi.read" ]
+      }
+    }
+  ],
+
+  "GlobalConfiguration": {
+    //Gateway URL
+    "BaseUrl": "https://localhost:5001"
+  }
+  //"HttpHandlerOptions": {
+  //  "AllowAutoRedirect": true,
+  //  "UseCookieContainer": true,
+  //  "UseTracing": true,
+  //  "MaxConnectionsPerServer": 100
+  //}
+}
