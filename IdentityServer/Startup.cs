@@ -14,11 +14,20 @@ using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 using IdentityServer4.EntityFramework.Mappers;
 using IdentityServer4.EntityFramework.DbContexts;
+using Microsoft.Extensions.Configuration;
 
 namespace ProCodeGuide.Samples.IdentityServer4
 {
     public class Startup
     {
+
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; set; }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
@@ -33,7 +42,13 @@ namespace ProCodeGuide.Samples.IdentityServer4
 
             services.AddControllersWithViews();
 
-            const string connectionString = @"Data Source=DESKTOP-2VGCOGK\SQLEXPRESS;database=GateWayTest;trusted_connection=yes;";
+            //const string connectionString = @"Data Source=DESKTOP-2VGCOGK\SQLEXPRESS;database=GateWayTest;trusted_connection=yes;";
+            string connectionString = Microsoft
+   .Extensions
+   .Configuration
+   .ConfigurationExtensions
+   .GetConnectionString(Configuration, "IdentityConnectionString");
+
             var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
 
             // configure identity server with in-memory stores, keys, clients and scopes
