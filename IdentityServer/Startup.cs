@@ -59,6 +59,7 @@ namespace ProCodeGuide.Samples.IdentityServer4
                     //options.EnableTokenCleanup = true;
                     //options.TokenCleanupInterval = 30;
 
+
                     options.EnableTokenCleanup = true;
                     options.TokenCleanupInterval = 30;
                 });
