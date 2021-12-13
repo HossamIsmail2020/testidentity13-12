@@ -28,14 +28,15 @@ namespace ProCodeGuide.Samples.IdentityServer4.IdentityConfiguration
                     ClientSecrets = new List<Secret> {new Secret("ProCodeGuide".Sha256())},
     
                     AllowedGrantTypes = GrantTypes.Code,
-                    RedirectUris = new List<string> {"https://localhost:44346/signin-oidc"},
+                    //RedirectUris = new List<string> {"https://localhost:44346/signin-oidc"},
+                    RedirectUris = new List<string> {"https://localhost:5006/signin-oidc"},
                     AllowedScopes = new List<string>
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         IdentityServerConstants.StandardScopes.Email,
                         "role",
-                        "weatherApi.read"
+                        "weatherApi.read1"
                     },
 
 

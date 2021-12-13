@@ -14,6 +14,7 @@ namespace ProCodeGuide.Samples.IdentityServer4.IdentityConfiguration
             {
                 new ApiScope("weatherApi.read", "Read Access to Weather API"),
                 new ApiScope("weatherApi.write", "Write Access to Weather API"),
+                new ApiScope("weatherApi.read1", "Write Access to Weather API"),
             };
         }
     }

@@ -14,7 +14,7 @@
 
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "IdentityApiKey",
-        "AllowedScopes": [ "weatherApi.read" ]
+        "AllowedScopes": [ "weatherApi.read1" ]
       }
     }
   ],

@@ -31,15 +31,15 @@ namespace ProCodeGuide.IdServer4.Client
             .AddCookie("cookie")
             .AddOpenIdConnect("oidc", options =>
             {
-                options.Authority = "https://localhost:5006";
-                options.ClientId = "oidcMVCApp12";
+                options.Authority = "https://localhost:5006/";
+                options.ClientId = "oidcMVCApp";
                 options.ClientSecret = "ProCodeGuide";
 
                 options.ResponseType = "code";
                 options.UsePkce = true;
                 options.ResponseMode = "query";
 
-                options.Scope.Add("weatherApi.read");
+                options.Scope.Add("weatherApi.read1");
                 options.SaveTokens = true;
             });
 
