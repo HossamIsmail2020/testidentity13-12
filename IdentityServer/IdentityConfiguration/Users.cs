@@ -23,8 +23,11 @@ namespace ProCodeGuide.Samples.IdentityServer4.IdentityConfiguration
                     {
                         new Claim(JwtClaimTypes.Email, "support@procodeguide.com"),
                         new Claim(JwtClaimTypes.Role, "admin"),
-                        new Claim(JwtClaimTypes.WebSite, "https://procodeguide.com")
-                    }
+                       // new Claim(JwtClaimTypes.WebSite, "https://procodeguide.com"),
+                        new Claim(JwtClaimTypes.WebSite,"https://localhost:5006/signin-oidc"),
+                        new Claim(JwtClaimTypes.Scope,"weatherApi.read")
+                    },
+                     
                 }
             };
         }

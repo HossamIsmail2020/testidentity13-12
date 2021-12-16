@@ -26,7 +26,7 @@ namespace ProCodeGuide.Samples.IdentityServer4.IdentityConfiguration
                     ClientId = "oidcMVCApp",
                     ClientName = "Sample ASP.NET Core MVC Web App",
                     ClientSecrets = new List<Secret> {new Secret("ProCodeGuide".Sha256())},
-    
+
                     AllowedGrantTypes = GrantTypes.Code,
                     //RedirectUris = new List<string> {"https://localhost:44346/signin-oidc"},
                     RedirectUris = new List<string> {"https://localhost:5006/signin-oidc"},
@@ -47,10 +47,12 @@ namespace ProCodeGuide.Samples.IdentityServer4.IdentityConfiguration
                 {
                     ClientId = "Gateway",
                     ClientName = "ASP.NET Core Weather Api",
-                    AllowedGrantTypes = GrantTypes.ClientCredentials,
+                    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
                     ClientSecrets = new List<Secret> {new Secret("GatewaySecret".Sha256())},
-                    AllowedScopes = new List<string> {"weatherApi.read"}
+                    AllowedScopes = new List<string> {"weatherApi.read"},
+            
                 },
+
             };
         }
     }

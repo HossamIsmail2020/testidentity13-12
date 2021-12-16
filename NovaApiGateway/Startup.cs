@@ -44,6 +44,25 @@ namespace NovaApiGateway
 
             
             });
+
+            //for http client request
+            services.AddAuthentication()
+           .AddIdentityServerAuthentication("gatewayrequest", options =>
+           {
+
+               options.ApiName = "GetMainData";
+               options.Authority = "https://localhost:5006";
+                // options.SupportedTokens = SupportedTokens.Both;
+                options.ApiSecret = "GatewaySecret";
+
+               options.RequireHttpsMetadata = false;
+               options.SupportedTokens = SupportedTokens.Both;
+
+
+
+           });
+
+            services.AddHttpClient();
             services.AddOcelot();
         }
 
@@ -61,10 +80,11 @@ namespace NovaApiGateway
             app.UseAuthentication();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                //endpoints.MapGet("/", async context =>
+                //{
+                //    await context.Response.WriteAsync("Hello World!");
+                //});
+                endpoints.MapControllers();
             });
 
             app.UseOcelot().Wait();
